@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Project Managment</title>
+      <!-- Tell the browser to be responsive to screen width -->
+      <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+      <!-- Bootstrap 3.3.5 -->
+      <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- fullCalendar 2.2.5-->
+      <link rel="stylesheet" href="plugins/fullcalendar/fullcalendar.min.css">
+      <link rel="stylesheet" href="plugins/fullcalendar/fullcalendar.print.css" media="print">
+      <!-- Theme style -->
+      <link rel="stylesheet" href="dist/css/style.min.css">
+      <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+      <!-- iCheck -->
+      <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+   </head>
+   <body class="hold-transition skin-blue sidebar-mini">
+      <div class="wrapper">
+         <header class="main-header">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+               <!-- mini logo for sidebar mini 50x50 pixels -->
+               <span class="logo-mini"></span>
+               <!-- logo for regular state and mobile devices -->
+               <span class="logo-lg">Project Management</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+               <!-- Sidebar toggle button-->
+               <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+               <span class="sr-only">Toggle navigation</span>
+               </a>
+               <!-- Navbar Right Menu -->
+               <div class="navbar-custom-menu">
+                  <ul class="nav navbar-nav">
+                     <!-- Notifications: style can be found in dropdown.less -->
+                     <li class="dropdown notifications-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-bell-o"></i>
+                        <span class="label label-warning">10</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                           <li class="header">You have 10 notifications</li>
+                           <li>
+                              <!-- inner menu: contains the actual data -->
+                              <ul class="menu">
+                                 <li>
+                                    <a href="#">
+                                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="#">
+                                    <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                                    page and may cause design problems
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="#">
+                                    <i class="fa fa-users text-red"></i> 5 new members joined
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="#">
+                                    <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="#">
+                                    <i class="fa fa-user text-red"></i> You changed your username
+                                    </a>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li class="footer"><a href="#">View all</a></li>
+                        </ul>
+                     </li>
+                     <!-- Tasks: style can be found in dropdown.less -->
+                     <li class="dropdown tasks-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-flag-o"></i>
+                        <span class="label label-danger">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                           <li class="header">You have 9 tasks</li>
+                           <li>
+                              <!-- inner menu: contains the actual data -->
+                              <ul class="menu">
+                                 <li>
+                                    <!-- Task item -->
+                                    <a href="#">
+                                       <h3>
+                                          Design some buttons
+                                          <small class="pull-right">20%</small>
+                                       </h3>
+                                       <div class="progress xs">
+                                          <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                             <span class="sr-only">20% Complete</span>
+                                          </div>
+                                       </div>
+                                    </a>
+                                 </li>
+                                 <!-- end task item -->
+                                 <li>
+                                    <!-- Task item -->
+                                    <a href="#">
+                                       <h3>
+                                          Create a nice theme
+                                          <small class="pull-right">40%</small>
+                                       </h3>
+                                       <div class="progress xs">
+                                          <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                             <span class="sr-only">40% Complete</span>
+                                          </div>
+                                       </div>
+                                    </a>
+                                 </li>
+                                 <!-- end task item -->
+                                 <li>
+                                    <!-- Task item -->
+                                    <a href="#">
+                                       <h3>
+                                          Some task I need to do
+                                          <small class="pull-right">60%</small>
+                                       </h3>
+                                       <div class="progress xs">
+                                          <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                             <span class="sr-only">60% Complete</span>
+                                          </div>
+                                       </div>
+                                    </a>
+                                 </li>
+                                 <!-- end task item -->
+                                 <li>
+                                    <!-- Task item -->
+                                    <a href="#">
+                                       <h3>
+                                          Make beautiful transitions
+                                          <small class="pull-right">80%</small>
+                                       </h3>
+                                       <div class="progress xs">
+                                          <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                             <span class="sr-only">80% Complete</span>
+                                          </div>
+                                       </div>
+                                    </a>
+                                 </li>
+                                 <!-- end task item -->
+                              </ul>
+                           </li>
+                           <li class="footer">
+                              <a href="#">View all tasks</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <!-- User Account: style can be found in dropdown.less -->
+                     <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                        <span class="hidden-xs userName">Girish Kumar</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                           <!-- User image -->
+                           <li class="user-header">
+                              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                              <p class="userName">
+                                 Girish kumar - Web Developer
+                              </p>
+                              <p>
+                                 <small>Member since Nov. 2012</small>
+                              </p>
+                           </li>
+                           <!-- Menu Footer-->
+                           <li class="user-footer">
+                              <div class="pull-left">
+                                 <button data-toggle="modal" data-target="#clockInModal" class="btn btn-danger btn-flat" id="clockIn">Clock In <i class="fa fa-play" aria-hidden="true"></i></button>
+                                 <button data-toggle="modal" data-target="#clockOutModal" class="btn btn-success btn-flat hide" id="clockOut">Clock Out <i class="fa fa-stop" aria-hidden="true"></i></button>
+                              </div>
+                              <div class="pull-right">
+                                 <button class="btn btn-info btn-flat" id="logoutButton">Sign out</button>
+                              </div>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </header>
+         <!-- Left side column. contains the logo and sidebar -->
+         <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+               <!-- Sidebar user panel -->
+               <div class="user-panel">
+                  <div class="pull-left image">
+                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                  </div>
+                  <div class="pull-left info">
+                     <p class="userName">Girish kumar</p>
+                  </div>
+               </div>
+               <!-- sidebar menu: : style can be found in sidebar.less -->
+               <ul class="sidebar-menu">
+                  <li class="header orgName">MAIN NAVIGATION</li>
+                  <li class="treeview">
+                     <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+                  </li>
+                  <li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                        <span>Grievance</span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="Grievance.html"><i class="fa fa-circle-o text-red"></i>Report New Grievance</a></li>
+                        <li><a href="view_grievance.html"><i class="fa fa-circle-o text-green"></i>View Your Grievance</a></li>
+                        <li class="rootUser"><a href="view_emp_grievance.html"><i class="fa fa-circle-o text-yellow"></i>View Employee's Grievance</a></li>
+                      </ul>
+                  </li>
+                  <li class="treeview active">
+                      <a href="#">
+                        <i class="fa fa-bell" aria-hidden="true"></i>
+                        <span>Notification</span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="mailbox.html?type=HolidayRequest"><i class="fa fa-circle-o text-red"></i>Leave Reqest Notification</a></li>
+                        <li><a href="mailbox.html?type=Email"><i class="fa fa-circle-o text-green"></i>Email Notification</a></li>
+                        <li><a href="mailbox.html?type=MeetingRequest"><i class="fa fa-circle-o text-yellow"></i>Meeting Notification</a></li>
+                        <li><a href="mailbox.html?type=Others"><i class="fa fa-circle-o text-blue"></i>Others</a></li>
+                      </ul>
+                  </li>
+                  <li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i>
+                        <span>Employee/Company Leaves</span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li>
+                           <a href="attendence_info.html"><i class="fa fa-circle-o text-red"></i>Attendance Information</a>
+                        </li>
+                        <li>
+                           <a href="holidayrequest.html"><i class="fa fa-circle-o text-green"></i>Request Leave</a>
+                        </li>
+                        <li>
+                           <a href="leave_details.html"><i class="fa fa-circle-o text-yellow"></i>View Your Leaves</a>
+                        </li>
+                        <li>
+                           <a href="company_leaves.html"><i class="fa fa-circle-o text-pink"></i>View Company Leaves</a>
+                        </li>
+                        <li class="rootUser">
+                           <a href="add_emp_leaves.html"><i class="fa fa-circle-o text-blue"></i>Add Leaves To Employee</a>
+                        </li>
+                        <li class="rootUser">
+                           <a href="add_org_leaves.html"><i class="fa fa-circle-o text-black"></i>Add/Update Organisation Leaves</a>
+                        </li>
+                      </ul>
+                  </li>
+               </ul>
+            </section>
+            <!-- /.sidebar -->
+         </aside>
+         <!-- Content Wrapper. Contains page content -->
+         <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+               <h1>
+                  Notification
+                  <small>13 new notifications</small>
+               </h1>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-11 box box-primary">
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                           <br/>
+                           <div class="mailbox-controls">
+                              <!-- Check all button -->
+                              <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                              </button>
+                              <div class="btn-group">
+                                 <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
+                                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
+                              </div>
+                              <!-- /.btn-group -->
+                              <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                              <div class="pull-right">
+                                 1-15/150
+                                 <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                 </div>
+                                 <!-- /.btn-group -->
+                              </div>
+                              <!-- /.pull-right -->
+                           </div>
+                           <br/><br/>
+                           <div class="table-responsive mailbox-messages">
+                              <table class="table table-hover table-striped">
+                                 <tbody>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html?type=leaveResponse">Naresh</a></td>
+                                       <td class="mailbox-subject">Your holiday request has been granted...
+                                       </td>
+                                       <td class="mailbox-subject"><b>Holiday Request</b></td>
+                                       <td class="mailbox-date">5 mins ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html?type=leaveRequest">Naresh</a></td>
+                                       <td class="mailbox-subject">Trying to find a solution to this problem...
+                                       </td>
+                                       <td class="mailbox-subject"><b>New Email</b></td>
+                                       <td class="mailbox-date">28 mins ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html?type=emailRequest">Naresh</a></td>
+                                       <td class="mailbox-subject">You have new meeting request...
+                                       </td>
+                                       <td class="mailbox-subject"><b>Meeting Request</b></td>
+                                       <td class="mailbox-date">11 hours ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Naresh</a></td>
+                                       <td class="mailbox-subject">Trying to find a solution to this problem...
+                                       </td>
+                                       <td class="mailbox-subject"><b>New Email</b></td>
+                                       <td class="mailbox-date">15 hours ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Naresh</a></td>
+                                       <td class="mailbox-subject">Hey welcome to the team. I am expecting a lot from you...
+                                       </td>
+                                       <td class="mailbox-subject"><b>New Email</b></td>
+                                       <td class="mailbox-date">Yesterday</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Naresh</a></td>
+                                       <td class="mailbox-subject">You have been assigned to new project...
+                                       </td>
+                                       <td class="mailbox-subject"><b>Assigned To Project</b></td>
+                                       <td class="mailbox-date">2 days ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Kiran Kumar</a></td>
+                                       <td class="mailbox-subject">Hey you are lagging in your tasks...
+                                       </td>
+                                       <td class="mailbox-subject"><b>New Email</b></td>
+                                       <td class="mailbox-date">2 days ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Anitha</a></td>
+                                       <td class="mailbox-subject">Trying to find a solution to this problem...
+                                       </td>
+                                       <td class="mailbox-subject"><b>New Email</b></td>
+                                       <td class="mailbox-date">2 days ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Preethi</a></td>
+                                       <td class="mailbox-subject">Hey do you have any dependency on me in this sprint...
+                                       </td>
+                                       <td class="mailbox-subject"><b>New Email</b></td>
+                                       <td class="mailbox-date">2 days ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Anil Ambani</a></td>
+                                       <td class="mailbox-subject">You have a new meeting request set by...
+                                       </td>
+                                       <td class="mailbox-subject"><b>Meeting Request</b></td>
+                                       <td class="mailbox-date">2 days ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Kiran Kumar</a></td>
+                                       <td class="mailbox-subject">You have new objectives set by your team lead...
+                                       </td>
+                                       <td class="mailbox-subject"><b>Objectives</b></td>
+                                       <td class="mailbox-date">4 days ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Kiran Kumar</a></td>
+                                       <td class="mailbox-subject">You have been assigned to a project ...
+                                       </td>
+                                       <td class="mailbox-subject"><b>Added To Project</b></td>
+                                       <td class="mailbox-date">12 days ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Naresh</a></td>
+                                       <td class="mailbox-subject">Trying to find a solution to this problem...
+                                       </td>
+                                       <td class="mailbox-subject"><b>New Email</b></td>
+                                       <td class="mailbox-date">12 days ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Shashikala</a></td>
+                                       <td class="mailbox-subject">Congragulations on joining our compan...
+                                       </td>
+                                       <td class="mailbox-subject"><b>New Email</b></td>
+                                       <td class="mailbox-date">14 days ago</td>
+                                    </tr>
+                                    <tr>
+                                       <td><input type="checkbox"></td>
+                                       <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                       <td class="mailbox-name"><a href="read-mail.html">Shashikala</a></td>
+                                       <td class="mailbox-subject">You have been added to the organisation...
+                                       </td>
+                                       <td class="mailbox-subject"><b>Added To Organisation</b></td>
+                                       <td class="mailbox-date">15 days ago</td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <!-- /.table -->
+                           </div>
+                           <!-- /.mail-box-messages -->
+                        </div>
+                        <!-- /.box-body -->
+                        <br/><br/>
+                        <div class="box-footer no-padding">
+                           <div class="mailbox-controls">
+                              <!-- Check all button -->
+                              <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                              </button>
+                              <div class="btn-group">
+                                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
+                                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
+                              </div>
+                              <!-- /.btn-group -->
+                              <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                              <div class="pull-right">
+                                 1-15/150
+                                 <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                 </div>
+                                 <!-- /.btn-group -->
+                              </div>
+                              <!-- /.pull-right -->
+                           </div>
+                        </div>
+                        <br/>
+                     </div>
+                     <!-- /. box -->
+                  </div>
+                  <!-- /.col -->
+               </div>
+               <!-- /.row -->
+            </section>
+            <!-- /.content -->
+
+           <div class="modal fade modal-dialog-center" id="clockInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+               <div class="modal-dialog ">
+                  <div class="modal-content-wrap">
+                     <div class="modal-content panel panel-primary">
+                        <div class="modal-header panel-heading">
+                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                           <h4 class="modal-title"><center>Hi, Welcome</center></h4>
+                        </div>
+                        <div class="modal-body panel-body">
+                           <h4 class="text-primary"> Happy to see you start working on time. Please click on start working Button to log your work </h4>
+                        </div>
+                        <div class="modal-footer">
+                           <ul class="pager">
+                             <li class="previous" data-dismiss="modal" id="clockInModalClick"><a href="#">Start Working</a></li>
+                             <li class="next" data-dismiss="modal"><a href="#">Cancel</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="modal fade modal-dialog-center" id="clockOutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+               <div class="modal-dialog ">
+                  <div class="modal-content-wrap">
+                     <div class="modal-content panel panel-primary">
+                        <div class="modal-header panel-heading">
+                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                           <h4 class="modal-title"><center>Clock Out</center></h4>
+                        </div>
+                        <div class="modal-body panel-body">
+                           <center>
+                              <h4 class="text-primary"> Are you sure, you want to clock out? </h4>
+                              <br/>
+                              <h5 class="text-primary" id="clockOutText">You worked for 7 hours 53 minutes today.</h5>
+                           </center>
+                        </div>
+                        <div class="modal-footer">
+                           <ul class="pager">
+                             <li class="previous" data-dismiss="modal" id="clockOutModalClick"><a href="#">Clock Out</a></li>
+                             <li class="next" data-dismiss="modal"><a href="#">Cancel</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- /.content -->
+         </div>
+         <!-- /.content-wrapper -->
+         <footer class="main-footer">
+            <strong>Copyright &copy; 2016-2017 <a href="#">Project Management</a>.</strong> All rights
+            reserved.
+         </footer>
+      </div>
+      <!-- ./wrapper -->
+      <!-- jQuery 2.2.0 -->
+      <script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+      <!-- Bootstrap 3.3.5 -->
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <!-- Slimscroll -->
+      <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+      <!-- FastClick -->
+      <script src="plugins/fastclick/fastclick.js"></script>
+      <!-- AdminLTE App -->
+      <script src="dist/js/app.min.js"></script>
+      <!-- iCheck -->
+      <script src="plugins/iCheck/icheck.min.js"></script>
+      <!-- Page Script -->
+      <script>
+         $(function () {
+           //Enable iCheck plugin for checkboxes
+           //iCheck for checkbox and radio inputs
+           $('.mailbox-messages input[type="checkbox"]').iCheck({
+             checkboxClass: 'icheckbox_flat-blue',
+             radioClass: 'iradio_flat-blue'
+           });
+         
+           //Enable check and uncheck all functionality
+           $(".checkbox-toggle").click(function () {
+             var clicks = $(this).data('clicks');
+             if (clicks) {
+               //Uncheck all checkboxes
+               $(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
+               $(".fa", this).removeClass("fa-check-square-o").addClass('fa-square-o');
+             } else {
+               //Check all checkboxes
+               $(".mailbox-messages input[type='checkbox']").iCheck("check");
+               $(".fa", this).removeClass("fa-square-o").addClass('fa-check-square-o');
+             }
+             $(this).data("clicks", !clicks);
+           });
+         
+           //Handle starring for glyphicon and font awesome
+           $(".mailbox-star").click(function (e) {
+             e.preventDefault();
+             //detect type
+             var $this = $(this).find("a > i");
+             var glyph = $this.hasClass("glyphicon");
+             var fa = $this.hasClass("fa");
+         
+             //Switch states
+             if (glyph) {
+               $this.toggleClass("glyphicon-star");
+               $this.toggleClass("glyphicon-star-empty");
+             }
+         
+             if (fa) {
+               $this.toggleClass("fa-star");
+               $this.toggleClass("fa-star-o");
+             }
+           });
+         });
+      </script>
+      <!-- AdminLTE for demo purposes -->
+      <script src="dist/js/demo.js"></script>
+
+      <script src="js/url.json"></script>
+      <script src="js/mailBoxNotification.js"></script>
+      <script src="../js/main/httputil.js"></script>
+      <script src="../js/index.js"></script>
+      <script src="../js/user/generic.js"></script>
+      <script src="js/entry.js"></script>
+      
+   </body>
+</html>

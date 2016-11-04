@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/login.css">
+    <script src="js/main/jquery.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+  </head>
+  <body>
+  <div class="container-fluid">
+  		<div class="row panel panel-primary">
+  				<div class="panel-heading"><span style="margin:30px">Project Management</span></div>
+  			</div>
+		  <div class="container" style="margin-top:5%">
+		  		<div class="row col-md-12">
+		  			<div class="row panel panel-primary">
+		  				<div class="panel-heading"><h4 style="margin:10px">Register your organisation</h4></div>
+		  				<div class="panel-body">
+						    <input type="text" placeholder="Enter EmailId" name="eId" id="emailId" required>
+						    <input type="text" placeholder="Full Name" name="userName" id="userName" required>
+						    <input type="text" placeholder="Organisation Name" name="oName" id="orgName" required>
+						    <input type="text" placeholder="zip code" name="oAddress" id="orgAddress" required>
+						    <input type="text" placeholder="Registered Number" name="oReg" id="regNum" required>
+						    <input type="password" placeholder="Create Password" name="psw1" id="pass1" required>
+						    <input type="password" placeholder="Repeat Password" name="psw2" id="pass2" required>
+						    <p class="hide errorText" id="mandatoryFieldError"></p>
+						    <button id="regButton" >Register</button>
+						    <input type="checkbox" checked="checked"> Remember me
+		  				</div>
+		  			</div>
+		  		</div>
+		  		<div class="row col-md-12" >
+				    <span >Login <a href="login.html">here</a></span>
+				    <span style="float:right">Forgot <a data-toggle="modal" data-target="#forgotPassword">password?</a></span>
+		  		</div>
+		  </div>
+		  
+		<div class="modal fade modal-dialog-center" id="forgotPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	         <div class="modal-dialog  modal-dialog-center">
+	            <div class="modal-content-wrap row">
+	               <div class="modal-content panel panel-primary">
+	                  <div class="modal-header panel-heading">
+	                     <h4 class="modal-title">Forgot Password</h4>
+	                  </div>
+	                  <div class="modal-body" style="margin:30px">
+	                     <fieldset>
+	                     	<div class="col-md-3">
+	                     		<label>Email Id :</label>
+	                     	</div>
+	                        <div class="col-md-9">
+	                        	<input id="emailIdPass" placeholder="Enter your Email Id" type="email" tabindex="2" class="form-control" required>
+	                        </div>
+	                     </fieldset>
+	                  </div>
+	                  <p class="errorText" id="passText" style="color:red; margin-left:30px" ></p>
+	                  <div class="modal-footer">
+	                     <button class="btn btn-success" onclick="sendEmail()"> Rest Password</button>
+	                  </div>
+	               </div>
+	            </div>
+	         </div>
+	     </div>
+
+  </div>
+
+
+	<script src="js/main/url.json"></script>
+	<script src="js/main/httputil.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/user/register.js"></script>
+	<script src="js/user/generic.js"></script>
+	<script>
+	$(document).ready(function(){
+		userDetails=localStorage.getItem('userDetails');
+		authenticate();
+	})
+	function sendEmail(){
+		console.log($("#emailIdPass").val())
+		if($("#emailIdPass").val()!=undefined && $("#emailIdPass").val()!=""){
+			$("#passText").html('');
+			$("#passText").html('Login with new Password sent to your email id');
+		}else{
+			$("#passText").html('');
+			$("#passText").html('Please enter EmailId');
+		}
+	}
+	</script>
+  </body>
+</html>

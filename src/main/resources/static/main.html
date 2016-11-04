@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Project Management</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/jquery-ui.css" rel="stylesheet">
+      <link href="css/bootstrap-reset.css" rel="stylesheet">
+      <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+      <script src="js/main/jquery.min.js"></script>
+      <script src="js/main/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="css/dropzone.css">
+      <link rel="stylesheet" href="css/task.css">
+   </head>
+   <body>
+      <div class="container-fluid">
+      <div class="row">
+         <nav class="header navbar-primary" style="background-color:#f1f2f7" >
+            <a class="logo" id="homeButton">Project <span>Management</span></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+               <!--  notification start -->
+               <ul class="nav top-menu">
+                  <li class="active" id="homeButton1"><a href="#">Dashboard</a></li>
+                  <li data-toggle="modal" data-target="#addEmployee" id="addEmployeeIcon"><a href="#">Add Employee</a></li>
+                  <li>
+                     <div class="dropdown" >
+                        <div class="btn default dropdown-toggle" type="button" data-toggle="dropdown">Projects
+                           <span class="caret"></span>
+                        </div>
+                        <ul class="dropdown-menu" id="topProjectDropdown">
+                           <li><a href="#" class="disabled">No Project Assigned</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="dropdown" >
+                        <div class="btn default dropdown-toggle" type="button" data-toggle="dropdown" >Boards
+                           <span class="caret"></span>
+                        </div>
+                        <ul class="dropdown-menu" id="topBoardDropdown">
+                           <li><a href="#" class="disabled">No Boards Available</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li data-toggle="modal" data-target="#createTask">
+                     <div href="#" class="btn btn-primary">Create</div>
+                  </li>
+               </ul>
+               </ul>
+            </div>
+            <div class="top-nav ">
+               <ul class="nav pull-right top-menu">
+                  <!-- user login dropdown start-->
+                  <li class="dropdown">
+                     <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="true">
+                     <img alt="" src="img_avatar2.png" height="30px" width="30px">
+                     <span class="username" id="topRightUserName"></span>
+                     <b class="caret"></b>
+                     </a>
+                     <ul class="dropdown-menu extended logout">
+                        <div class="log-arrow-up"></div>
+                        <li><a href="HrTool/index.html"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                        <li><a href="index.html"><i class="fa fa-users"></i> Company Chart</a></li>
+                        <li><a id="logoutButton"><i class="fa fa-key"></i> Log Out</a></li>
+                     </ul>
+                  </li>
+                  <!-- user login dropdown end -->
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <div class="col-md-12 row" style="margin-top:100px">
+         <div class="col-md-6">
+            <div class="panel panel-primary">
+               <div class="panel-heading">Introduction </div>
+               <div class="panel-body">
+                  <ul style="margin-left:50px">
+                     <li>
+                        <h4>Welcome to PROJECT MANAGEMENT</h4>
+                     </li>
+                     <li>
+                        <h5>New to PROJECT MANAGEMENT? Check out the <a>PROJECT MANAGEMENT User's Guide.</a></h5>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="panel panel-primary">
+               <div class="panel-heading" >Tasks Assigned To me </div>
+               <div class="panel-body">
+                  <div class="task-content">
+                     <ul id="taskTbody" class="task-list ui-sortable">
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-12 row" style="margin-top:10px">
+         <div class="col-md-6">
+         </div>
+         <div class="col-md-6">
+            <div class="panel panel-primary">
+               <div class="panel-heading" id="sprintHeaderInTasks">Activity Stream</div>
+               <div class="panel-body">
+                  <div class="task-content">
+                     <ul id="activityTbody" class="task-list ui-sortable">
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade modal-dialog-center" id="addEmployee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+         <div class="modal-dialog ">
+            <div class="modal-content-wrap">
+               <div class="modal-content panel panel-primary">
+                  <div class="modal-header panel-heading">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                     <h4 class="modal-title">Add Employee</h4>
+                  </div>
+                  <div class="modal-body panel-body">
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:96px">Email Id *</p>
+                        <input id="empEmailId"placeholder="Enter Employee emailId" type="email" class="form-control"required style="max-width:300px">
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:108px">Name *</p>
+                        <input id="name"placeholder="Enter Employee Name" type="text"class="form-control"  required style="max-width:300px">
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:72px">Date Of Birth *</p>
+                        <input id="dateOfBirth" placeholder="mm/dd/yyyy" type="text" class="form-control datepicker"  required style="max-width:300px">
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:85px">Company Id </p>
+                        <input id="empId" placeholder="Enter company Id of employee" type="text" class="form-control"  required style="max-width:300px">
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:60px">Employee Type *</p>
+                        <select class="form-control" id="empType" style="max-width:300px">
+                           <option>Normal</option>
+                           <option>Admin</option>
+                           <option>ROOT</option>
+                        </select>
+                     </div>
+                     <p class="hide errorText" style="color:red" id="mandatoryFieldError"></p>
+                     <fieldset>
+                  </div>
+                  <div class="modal-footer">
+                     <button class="btn btn-success" type="button" id="addEmployeeButton"> Submit</button>
+                     <a data-dismiss="modal" style="margin:20px"><u>Close</u></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade modal-dialog-center" id="createTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content-wrap">
+               <div class="modal-content panel panel-primary">
+                  <div class="modal-header panel-heading">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                     <h4 class="modal-title">Create Issue</h4>
+                  </div>
+                  <div class="modal-body panel-body" >
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:150px">Project * </p>
+                        <select class="form-control left" id="taskProjectName" style="max-width:250px">
+                        </select>
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="positive:relative;text-align:right;margin-left:135px;margin-right:20px">Task Type * </p>
+                        <select class="form-control" id="taskType" style="max-width:250px">
+                           <option>Feature</option>
+                           <option>Bug</option>
+                           <option>Improvement</option>
+                           <option>Others</option>
+                        </select>
+                     </div>
+                     <div class="row">
+                        <hr/>
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:137px">Task Title *</p>
+                        <input id="taskTitle" placeholder="Enter Task Title" type="email" tabindex="2" class="form-control" required  style="max-width:500px">
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:149px">Priority *</p>
+                        <select class="form-control" id="taskType" style="max-width:250px">
+                           <option>10</option>
+                           <option>9</option>
+                           <option>8</option>
+                           <option>7</option>
+                           <option>6</option>
+                           <option>5</option>
+                           <option>4</option>
+                           <option>-1</option>
+                        </select>
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:159px">Labels  </p>
+                        <input id="taskLabel" placeholder="Enter label" type="email" tabindex="2" class="form-control" required  style="max-width:500px">
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:163px">Sprint  </p>
+                        <select class="form-control" id="taskSprintName"  style="max-width:500px">
+                        </select>
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:139px">Attachment  </p>
+                        <form style="margin-right:182px;margin-left:213px" action="assets/dropzone/upload.php" class="dropzone clickable" id="my-awesome-dropzone">
+                           <div class="default message clickable" ><span style="margin-top:23%" class="clickable">Drop files or click to upload files</span></div>
+                        </form>
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:140px">Assignee :</p>
+                        <select class="form-control" id="projectAssignee"  style="max-width:500px">
+                        </select>
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:105px">Estimated Time :</p>
+                        <input id="taskEstimatedTime" placeholder="Estimated Time in Hours" type="email" class="form-control" tabindex="2" required  style="max-width:500px">
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:129px">Description :</p>
+                        <textarea id="taskDescription" placeholder="Type your description here...." class="form-control" tabindex="5" required style="max-width:500px" rows="10"></textarea>
+                     </div>
+                     <p class="hide errorText" style="color:red" id="taskMandatoryFieldError"></p>
+                  </div>
+                  <div class="modal-footer">
+                     <button class="btn btn-success" type="button" id="addTaskButton"> Submit</button>
+                     <a data-dismiss="modal" style="margin:20px"><u>Close</u></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade modal-dialog-center" id="addProject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+         <div class="modal-dialog ">
+            <div class="modal-content-wrap">
+               <div class="modal-content panel panel-primary">
+                  <div class="modal-header panel-heading">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                     <h4 class="modal-title">Add Project</h4>
+                  </div>
+                  <div class="modal-body panel-body">
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:70px">Project Name :</p>
+                        <input id="projectName" placeholder="Enter Project Name" type="email" tabindex="2" class="form-control" required style="max-width:300px">
+                     </div>
+                     <div class="row taskMargin">
+                        <p class="left modalRows" style="margin-left:79px">Project Lead :</p>
+                        <input id="projectLead" placeholder="Enter Project Lead email id" type="email" tabindex="2" class="form-control" required style="max-width:300px">
+                     </div>
+                     <p class="hide errorText" id="projectMandatoryFieldError" style="color:red"></p>
+                  </div>
+                  <div class="modal-footer">
+                     <button class="btn btn-success" type="button" id="addProjectButton"> Submit</button>
+                     <a data-dismiss="modal" style="margin:20px"><u>Close</u></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/main/jquery.js"></script>
+      <script src="js/main/jquery-1.10.2.js"></script>
+      <script src="js/main/jquery-ui.js"></script>
+      <script src="js/main/url.json"></script>
+      <script src="js/main/httputil.js"></script>
+      <script src="js/index.js"></script>
+      <script src="js/user/generic.js"></script>
+      <script src="js/user/addEmployee.js"></script>
+      <script src="js/user/addProject.js"></script>
+      <script src="js/user/addTask.js"></script>
+      <script src="js/user/getTasks.js"></script>
+      <script src="js/user/getProject.js"></script>
+      <script src="js/user/getSprint.js"></script>
+      <script src="js/main/dropzone.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function(){
+         
+          //fetch all the tasks of an user to display in my tasks
+           getAllTasksOfUser();
+         
+           //fetch all the tasks activity of a project to display in my tasks activity
+           getAllTasksActivityOfProject();
+         
+           //fetch header values
+           getProjectsOfAnOrganisation() ;
+           getAllSprintsOfAProject()
+         
+           $( ".datepicker" ).datepicker();        
+         })
+      </script>
+   </body>
+</html>

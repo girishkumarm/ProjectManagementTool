@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Project Management</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+          
+    <link href="css/style.css" rel="stylesheet">
+      <style>
+      p{
+         cursor: pointer;
+      }
+      .hide{
+         display:block;
+      }
+      .thick {
+             font-weight: bold;
+         }
+      </style>
+      <link rel="stylesheet" href="css/task.css">
+   </head>
+   <body>
+      <nav class="navbar navbar-default">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="#">Project Management</a>
+            </div>
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="#">Home</a></li>
+               <li data-toggle="modal" data-target="#addEmployee"><a href="#">Add Employee</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="#" id="logoutButton"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="modal fade modal-dialog-center" id="addEmployee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+         <div class="modal-dialog ">
+            <div class="modal-content-wrap">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                     <h4 class="modal-title">Add Employee</h4>
+                  </div>
+                  <div class="modal-body">
+                     <fieldset>
+                        <label>Email Id *</label>
+                        <input id="empEmailId"placeholder="Enter Employee emailId" type="email" class="form-control"required>
+                     </fieldset>
+                     <fieldset>
+                        <label>Name *</label>
+                        <input id="name"placeholder="Enter Employee Name" type="text"class="form-control"  required>
+                     </fieldset>
+                     <fieldset>
+                        <label>Date Of Birth *</label>
+                        <input id="dateOfBirth" placeholder="dd/mm/yyyy" type="text" class="form-control"  required>
+                     </fieldset>
+                     <fieldset>
+                        <label>Company Id </label>
+                        <input id="empId" placeholder="Enter company Id of employee" type="text" class="form-control"  required>
+                     </fieldset>
+                     <fieldset>
+                        <label for="empType">Employee Type *</label>
+                       <select class="form-control" id="empType">
+                         <option>Normal</option>
+                         <option>Admin</option>
+                       </select>
+                     </fieldset>
+                     <p class="hide errorText" style="color:red" id="mandatoryFieldError"></p>
+                     <fieldset>
+                  </div>
+                  <div class="modal-footer">
+                     <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                     <button class="btn btn-warning" type="button" id="addEmployeeButton"> Submit</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+       <div class="modal fade modal-dialog-center" id="createTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+         <div class="modal-dialog ">
+            <div class="modal-content-wrap">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                     <h4 class="modal-title">Add Task</h4>
+                  </div>
+                  <div class="modal-body">
+                     <fieldset>
+                        <label for="empType">Project *</label>
+                       <select class="form-control" id="taskProjectName">
+                       </select>
+                     </fieldset>
+                     <fieldset>
+                        <label for="empType">Sprint *</label>
+                       <select class="form-control" id="taskSprintName">
+                       </select>
+                     </fieldset>
+                     <fieldset>
+                        <label>Task Type :</label>
+                        <select class="form-control" id="taskType">
+                         <option>Feature</option>
+                         <option>Bug</option>
+                         <option>Improvement</option>
+                         <option>Others</option>
+                       </select>
+                     </fieldset>
+                     <fieldset>
+                        <label>Assignee :</label>
+                        <input id="taskAssignee" placeholder="Assignee" type="email" tabindex="2" class="form-control" required>
+                     </fieldset>
+                     <fieldset>
+                        <label>Task Title :</label>
+                        <input id="taskTitle" placeholder="Enter Task Title" type="email" tabindex="2" class="form-control" required>
+                     </fieldset>
+                     <fieldset>
+                        <label>Estimated Time :</label>
+                        <input id="taskEstimatedTime" placeholder="Estimated Time in Hours" type="email" class="form-control" tabindex="2" required>
+                     </fieldset>
+                     <fieldset>
+                        <label>Description :</label>
+                        <textarea id="taskDescription" placeholder="Type your description here...." class="form-control" tabindex="5" required></textarea>
+                     </fieldset>
+                      <p class="hide errorText" style="color:red" id="taskMandatoryFieldError"></p>
+                  </div>
+                  <div class="modal-footer">
+                     <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                     <button class="btn btn-warning" type="button" id="addTaskButton"> Submit</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade modal-dialog-center" id="addProject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+         <div class="modal-dialog ">
+            <div class="modal-content-wrap">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                     <h4 class="modal-title">Add Project</h4>
+                  </div>
+                  <div class="modal-body">
+                     <fieldset>
+                        <label>Project Name :</label>
+                        <input id="projectName" placeholder="Enter Project Name" type="email" tabindex="2" class="form-control" required>
+                     </fieldset>
+                     <p class="hide errorText" id="projectMandatoryFieldError" style="color:red"></p>
+                  </div>
+                  <div class="modal-footer">
+                     <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                     <button class="btn btn-warning" type="button" id="addProjectButton"> Submit</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade modal-dialog-center" id="addSprint" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+         <div class="modal-dialog ">
+            <div class="modal-content-wrap">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                     <h4 class="modal-title">Add Sprint</h4>
+                  </div>
+                  <div class="modal-body">
+                     <fieldset>
+                        <label for="empType">Project *</label>
+                       <select class="form-control" id="sprintProjectName">
+                       </select>
+                     </fieldset>
+                     <fieldset>
+                        <label>Sprint Name :</label>
+                        <input id="sprintName" placeholder="Enter Sprint Name" type="email" tabindex="2" class="form-control" required>
+                     </fieldset>
+                     <p class="hide errorText" style="color:red" id="sprintMandatoryFieldError"></p>
+                  </div>
+                  <div class="modal-footer">
+                     <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                     <button class="btn btn-warning" type="button" id="addSprintButton"> Submit</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade" id="addSprint" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="">
+               <div class="">
+                  <div id="contact" action="" method="post">
+                     <h3>Add Sprint</h3>
+                     <fieldset>
+                        <label for="empType">Project *</label>
+                       <select class="form-control" id="sprintProjectName">
+                       </select>
+                     </fieldset>
+                     <fieldset>
+                        <label>Sprint Name :</label>
+                        <input id="sprintName" placeholder="Enter Sprint Name" type="email" tabindex="2" required>
+                     </fieldset>
+                     
+                     <fieldset>
+                        <button name="submit" type="submit" id="addSprintButton">Submit</button>
+                     </fieldset>
+                     <p class="hide errorText" id="sprintMandatoryFieldError"></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div class="container-fluid">
+         <div class="row content">
+            <div class="col-sm-3">
+               <div class="row content">
+                  <div class="col-sm-9">
+                     <section class="panel tasks-widget">
+                          <header class="panel-heading">
+                              <h4 id="orgHeaderInProject">Project's Sprints</h4>
+                          </header>
+                          <div class="panel-body">
+                              <div class="task-content">
+                                  <ul id="projectTbody" class="task-list ui-sortable">
+                                  </ul>
+                              </div>
+                              <div class=" add-task-row">
+                                 <a class="btn btn-success btn-sm pull-left" href="#" data-toggle="modal" data-target="#addProject">Add New Project</a>
+                              </div>
+                          </div>
+                      </section>
+                  </div>
+               </div>
+               <div class="row content">
+                  <div class="col-sm-9">
+                     <section class="panel tasks-widget">
+                          <header class="panel-heading">
+                              <h4 id="projectHeaderInSprint">Project's Sprints</h4>
+                          </header>
+                          <div class="panel-body">
+                              <div class="task-content">
+                                  <ul id="sprintTbody" class="task-list ui-sortable">
+                                  </ul>
+                              </div>
+                              <div class=" add-task-row">
+                                 <a class="btn btn-success btn-sm pull-left" href="#" data-toggle="modal" data-target="#addSprint">Add New Sprint</a>
+                              </div>
+                          </div>
+                      </section>
+
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <section class="panel tasks-widget">
+                    <header class="panel-heading">
+                        <h4 id="sprintHeaderInTasks"></h4>
+                    </header>
+                    <div class="panel-body">
+                        <div class="task-content">
+                            <ul id="taskTbody" class="task-list ui-sortable">
+                            </ul>
+                        </div>
+                        <div class=" add-task-row">
+                           <a class="btn btn-success btn-sm pull-left" href="#" data-toggle="modal" data-target="#createTask">Add New Tasks</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-sm-3">
+            </div>
+         </div>
+      </div>
+     <script src="js/main/jquery.js"></script>
+     <script src="js/main/url.json"></script>
+     <script src="js/main/httputil.js"></script>
+     <script src="js/index.js"></script>
+      <script src="js/user/generic.js"></script>
+     <script src="js/user/getSprint.js"></script>
+     <script src="js/user/addEmployee.js"></script>
+     <script src="js/user/addProject.js"></script>
+      <script src="js/user/addSprint.js"></script>
+      <script src="js/user/addTask.js"></script>
+      <script src="js/user/getTasks.js"></script>
+      <script src="js/user/getProject.js"></script>
+   </body>
+</html>

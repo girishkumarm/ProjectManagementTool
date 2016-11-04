@@ -1,0 +1,24 @@
+URL =  {
+	"FETCH_ALL_USER":"http://localhost:8080/rest/employee/fetch-all-emp-info/",
+	"LOGIN":"http://localhost:8080/rest/employee/login",
+	"UPDATE_ALL_USER":"http://localhost:8080/rest/employee/save-employee-list",
+	"REGISTER_USER":"http://localhost:8080/rest/organisation/add-organisation",
+	"ADD_EMPLOYEE":"http://localhost:8080/rest/employee/save-employee",
+	"ADD_PROJECT":"http://localhost:8080/rest/project/add-project",
+	"ADD_SPRINT":"http://localhost:8080/rest/sprint/add-sprint",
+	"ADD_TASK":"http://localhost:8080/rest/tasks/add-task",
+	"UPDATE_TASK":"http://localhost:8080/rest/tasks/update-task",
+	"FETCH_PROJECT_OF_ORG":"http://localhost:8080/rest/project/fetch-all-projects/",
+	"FETCH_SPRINT_OF_PROJ":"http://localhost:8080/rest/sprint/fetch-sprint-info-by-orgname-projectName/",
+	"FETCH_TASKS_OF_SPRINT":"http://localhost:8080/rest/tasks/fetch-tasks-by-sprint-name/",
+	"FETCH_TASKS_BY_TASK_ID":"http://localhost:8080/rest/tasks/fetch-task/",
+	"FETCH_TASKS_BY_USER_NAME":"http://localhost:8080/rest/tasks/fetch-tasks-of-user/",
+	"FETCH_TASKS_OF_PROJECT":"http://localhost:8080/rest/tasks/fetch-tasks-of-project/",
+	"FETCH_USERS_OF_PROJECT":"http://localhost:8080/rest/employee/fetch-emp-of-project/",
+	"FETCH_SPRINT_REPORT":"http://localhost:8080/rest/work-log/fetch-logged-work-of-tasks/",
+	"FETCH_ACTIVITY_OF_PROJECT":"http://localhost:8080/rest/activity/fetch-activity-list",
+	"SEND_MEETING_REQUEST":"http://localhost:8080/rest/meeting-email/meeting",
+	"SEND_EMAIL_REQUEST":"http://localhost:8080/rest/meeting-email/email",
+
+	"SEND_LEAVE_REQUEST":"http://localhost:8080/rest/holiday-request/add-holiday-request"
+}
